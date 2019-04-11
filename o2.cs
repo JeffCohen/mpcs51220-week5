@@ -1,17 +1,29 @@
 // C# example, violation of Open-Closed Principle
+
+public interface IEmployee
+{
+  void SignContract();
+}
+
+class Engineer : IEmployee
+{
+
+}
+class Manager : IEmployee
+{
+
+}
+class SalesPerson : IEmployee
+{
+
+}
 public class HumanResourceDepartment
 {
-    private IList<Engineer> _hiredEngineers;
-    private IList<Manager> _hiredManagers;
+    private IList<IEmployee> _hiredPeople;
 
-    public void Hire(Engineer engineer){
-        engineer.SignContract();
-        _hiredEngineers.Add(engineer);
-    }
-
-    public void Hire(Manager manager){
-        manager.SignContract();
-        _hiredManagers.Add(manager);
+    public void Hire(IEmployee person){
+        person.SignContract();
+        _hiredPeople.Add(person);
     }
 }
 

@@ -29,5 +29,9 @@ class Order
 end
 
 order = Order.new(line_items, account)
-order.generete_receipt
+order.generate_receipt
 order.send_receipt
+
+#####
+o = Order.new(line_items, account)
+print(o.generate_receipt)
